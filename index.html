@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Festival</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" 
+        rel="stylesheet">
+    <link rel="stylesheet" href="build/css/app.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container container-header">
+            <h1>Techno & EDM Festival</h1>
+
+            <nav class="nav-main">
+                <a href="#lineup">Lineup</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#tickets">Tickets</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="video">
+        <div class="overlay">
+            <div class="container container-video">
+                <h2>Techno & EDM Festival</h2>
+                <p>Marzo 2027, CDES, Ecuador</p>
+            </div>
+        </div>
+        <video autoplay muted loop>
+            <source src="./video/dj.mp4" type="video/mp4"/>
+            <source src="./video/dj.ogv" type="video/ogg"/>
+            <source src="./video/dj.webm" type="video/webm"/>
+        </video>
+    </div>
+
+    <section class="about-festival">
+        <div class="image">
+            <img src="src/img/imagen_dj.jpg" alt="About festival">
+        </div>
+
+
+        <div class="container-festival">
+            <h2>Techno & EDM Festival</h2>
+            <p class="date">Marzo 2027, CDES, Ecuador</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                Assumenda nesciunt voluptatibus nihil, corrupti sequi, 
+                quo doloribus iure hic minima officiis architecto iste, 
+                ut repellendus facilis sint vero. Consequatur, ipsa omnis?</p>
+        </div>
+    </section>
+
+    <section id="lineup" class="lineup">
+        <h3>Line Up</h3>
+    
+        <p class="day">Friday 21</p>
+        <div class="scenarios-container">
+            <div class="scenery bg-yellow">
+                <p class="name-scenery">Techno</p>
+    
+                <ul class="calendar">
+                    <li>
+                        24:00 | <span>Adam Beyer</span>
+                    </li>
+                    <li>
+                        22:00 | <span>Carl Cox</span>
+                    </li>
+                    <li>
+                        20:00 | <span>HI-LO</span>
+                    </li>
+                    <li>
+                        19:00 | <span>Amelie Lens</span>
+                    </li>
+                    <li>
+                        18:00 | <span>CamelPhat</span>
+                    </li>
+                    <li>
+                        17:00 | <span>ARTBAT</span>
+                    </li>
+                </ul>
+            </div> <!--.scenery-->
+    
+            <div class="scenery bg-green">
+                <p class="name-scenery">EDM</p>
+    
+                <ul class="calendar">
+                    <li>
+                        24:00 | <span>David Guetta</span>
+                    </li>
+                    <li>
+                        22:00 | <span>Tïesto</span>
+                    </li>
+                    <li>
+                        20:00 | <span>Martin Garrix</span>
+                    </li>
+                    <li>
+                        19:00 | <span>Steve Aoki</span>
+                    </li>
+                    <li>
+                        18:00 | <span>Afrojack</span>
+                    </li>
+                    <li>
+                        17:00 | <span>Vintage Culture</span>
+                    </li>
+                </ul>
+            </div> <!--.scenery-->
+        </div> <!--.scenarios-container -->
+    
+    
+        <p class="day">Saturday 22</p>
+        <div class="scenarios-container container">
+            <div class="scenery bg-green">
+                <p class="name-scenery">Techno</p>
+    
+                <ul class="calendar">
+                    <li>
+                        24:00 | <span>Reinier Zonneveld</span>
+                    </li>
+                    <li>
+                        22:00 | <span>Eric Prydz</span>
+                    </li>
+                    <li>
+                        20:00 | <span>Deadmau5</span>
+                    </li>
+                    <li>
+                        19:00 | <span>Joris Voorn</span>
+                    </li>
+                    <li>
+                        18:00 | <span>Nina Kraviz</span>
+                    </li>
+                    <li>
+                        17:00 | <span>Argy</span>
+                    </li>
+                </ul>
+            </div> <!--.scenery-->
+    
+            <div class="scenery bg-yellow">
+                <p class="name-scenery">EDM</p>
+    
+                <ul class="calendar">
+                    <li>
+                        24:00 | <span>Armin Van Buuren</span>
+                    </li>
+                    <li>
+                        22:00 | <span>Calvin Harris</span>
+                    </li>
+                    <li>
+                        20:00 | <span>Hardwell</span>
+                    </li>
+                    <li>
+                        19:00 | <span>Above & Beyond</span>
+                    </li>
+                    <li>
+                        18:00 | <span>Diplo</span>
+                    </li>
+                    <li>
+                        17:00 | <span>Steve Angello</span>
+                    </li>
+                </ul>
+            </div> <!--.scenery-->
+        </div> <!--.scenarios-container -->
+    </section>
+
+    <section id="gallery" class="gallery">
+        <h3>Gallery</h3>
+
+        <div class="gallery-images"></div>
+    </section>
+
+    <section id="tickets" class="container-tickets">
+        <h3>Tickets</h3>
+    
+        <div class="tickets">
+            <div class="happens">
+                <p class="happens-name">Happens 1 Day</p>
+                <header class="happens-header">
+                    <p>Includes</p>
+                </header>
+                <div class="happens-body">
+                    <ul>
+                        <li>Access to both scenarios</li>
+                        <li>Unlimited Drink</li>
+                        <li>Event Shirt/Wristband</li>
+                    </ul>
+                </div>
+                <footer class="happens-footer">
+                    <p>$100</p>
+                </footer>
+            </div>
+            <div class="happens">
+                <p class="happens-name">Happens 2 Days</p>
+                <header class="happens-header">
+                    <p>Includes</p>
+                </header>
+                <div class="happens-body">
+                    <ul>
+                        <li>Access to both scenarios</li>
+                        <li>Unlimited Drink</li>
+                        <li>Event Shirt/Wristband</li>
+                        <li>VIP access</li>
+                    </ul>
+                </div>
+                <footer class="happens-footer">
+                    <p>$180</p>
+                </footer>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>Techno & EDM Festival. All rights reserved.</p>
+    </footer>
+
+    <script src="build/js/app.js"></script>
+
+</body>
+</html>
