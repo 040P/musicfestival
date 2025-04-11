@@ -67,6 +67,6 @@ node_modules/
 .dataconnect
 
 # Evita que se suban archivos de configuración y dependencias
-package.json
-package-lock.json
+# package.json
+# package-lock.json
 gulpfile.js
