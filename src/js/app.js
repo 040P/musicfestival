@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     fixednavigation();
     createGallery();
+    lazyLoadAllImages(); // Aquí cargamos también la del DJ
     highlightLink();
     scrollNav();
 })
@@ -18,30 +19,67 @@ function fixednavigation() {
         }
     }) 
 }
-    
-function createGallery(){
+  
+function lazyLoadAllImages() {
+    const lazyImages = document.querySelectorAll('img.lazy-img');
 
-    const AMOUT_IMAGES = 16;
-    const gallery = document.querySelector('.gallery-images');
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.getAttribute('data-src');
+                img.removeAttribute('data-src');
+                obs.unobserve(img);
+            }
+        });
+    }, {
+        rootMargin: '0px 0px 80px 0px',
+        threshold: 0.1
+    });
 
-    for(let i = 1; i <= AMOUT_IMAGES; i++){
-        const image = document.createElement('IMG'); 
-        image.src = `src/img/gallery/full/${i}.jpg`;
-        image.alt = 'Image Gallery';
-
-        // Event Handler
-        image.onclick = function() {
-            showImage(i);
-        }
-
-        gallery.appendChild(image);
-    }
+    lazyImages.forEach(img => {
+        observer.observe(img);
+    });
 }
 
+    function createGallery(){
+        const AMOUT_IMAGES = 16;
+        const gallery = document.querySelector('.gallery-images');
+    
+        for(let i = 1; i <= AMOUT_IMAGES; i++){
+            const image = document.createElement('PICTURE');
+            image.innerHTML = `
+                <source srcset="build/img/gallery/thumb/${i}.avif" type="image/avif">
+                <source srcset="build/img/gallery/thumb/${i}.webp" type="image/webp">
+                <img loading="lazy" width="200" height="300" src="build/img/gallery/thumb/${i}.jpg" alt="imagen galeria">
+            `;
+            // image.setAttribute('data-src', `src/img/gallery/thumb/${i}.jpg`);
+            // image.setAttribute('alt', 'Image Gallery');
+            // image.setAttribute('width', '300');
+            // image.setAttribute('height', '200');
+            // image.classList.add('lazy-img');
+
+            //Imagen invisible o pixel transparente como placeholder
+             image.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
+             
+
+               
+            image.onclick = function() {
+                showImage(i);
+            }
+    
+            gallery.appendChild(image);
+        }
+    }  
+    
+
 function showImage(i) {
-    const image = document.createElement('IMG'); 
-    image.src = `src/img/gallery/full/${i}.jpg`;
-    image.alt = 'Image Gallery';
+    const image = document.createElement('PICTURE'); 
+    image.innerHTML = `
+        <source srcset="build/img/gallery/full/${i}.avif" type="image/avif">
+        <source srcset="build/img/gallery/full/${i}.webp" type="image/webp">
+        <img loading="lazy" width="200" height="300" src="build/img/gallery/full/${i}.jpg" alt="imagen galeria">
+    `;
 
     // Trigger Modal
     const modal = document.createElement('DIV')
